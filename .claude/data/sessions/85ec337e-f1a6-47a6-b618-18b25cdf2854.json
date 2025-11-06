@@ -1,0 +1,6 @@
+{
+  "session_id": "85ec337e-f1a6-47a6-b618-18b25cdf2854",
+  "prompts": [
+    "fix  \u2718 [ERROR] Syntax error \"`\"\n\n    src/components/SEOHead.tsx:52:24:\n      52 \u2502       const selector = \\`meta[name=\"\\${name}\"][\\${MANAGED_ATTRIBUT...\n         \u2575                         ^\n"
+  ]
+}

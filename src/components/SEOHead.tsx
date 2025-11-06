@@ -11,25 +11,27 @@ interface SEOHeadProps {
 
 const MANAGED_ATTRIBUTE = 'data-managed-by';
 const MANAGED_VALUE = 'seo-head';
-const DEFAULT_SITE_TITLE = "Website";
-const DEFAULT_DESCRIPTION = "";
-const DEFAULT_CANONICAL_URL = "https://glvlaw.com/";
-const DEFAULT_AUTHOR = "Website";
+const DEFAULT_SITE_TITLE = 'Gary L. Voegele, P.A.';
+const DEFAULT_DESCRIPTION =
+  'Gary L. Voegele, P.A. is a full-service general practice law firm in Faribault, Minnesota providing responsive legal counsel since 1980.';
+const DEFAULT_CANONICAL_URL = 'https://glvlaw.com/';
+const DEFAULT_AUTHOR = 'Gary L. Voegele, P.A.';
 const DEFAULT_OG_LOCALE = 'en_US';
-const DEFAULT_SITE_IDENTIFIER = "Website";
-const DEFAULT_PHONE = "507.334.2045";
-const DEFAULT_EMAIL = "gary@glvlaw.com";
+const DEFAULT_SITE_IDENTIFIER = 'Gary L. Voegele, P.A.';
+const DEFAULT_PHONE = '507-334-2045';
+const DEFAULT_EMAIL = 'gary@glvlaw.com';
+
 const SEOHead: FC<SEOHeadProps> = ({
   title = DEFAULT_SITE_TITLE,
   description = DEFAULT_DESCRIPTION,
-  keywords = "",
+  keywords = '',
   canonicalUrl = DEFAULT_CANONICAL_URL,
-  ogImage = "/og-image.png"
+  ogImage = '/og-image.png',
 }) => {
   useEffect(() => {
     const head = document.head;
     if (!head) {
-      return;
+      return undefined;
     }
 
     const previousTitle = document.title;
@@ -49,7 +51,7 @@ const SEOHead: FC<SEOHeadProps> = ({
     };
 
     const upsertMetaByName = (name: string, value?: string | null) => {
-      const selector = \`meta[name="\${name}"][\${MANAGED_ATTRIBUTE}="\${MANAGED_VALUE}"]\`;
+      const selector = `meta[name="${name}"][${MANAGED_ATTRIBUTE}="${MANAGED_VALUE}"]`;
       const existing = head.querySelector(selector) as HTMLMetaElement | null;
       const content = value?.trim();
 
@@ -70,7 +72,7 @@ const SEOHead: FC<SEOHeadProps> = ({
     };
 
     const upsertMetaByProperty = (property: string, value?: string | null) => {
-      const selector = \`meta[property="\${property}"][\${MANAGED_ATTRIBUTE}="\${MANAGED_VALUE}"]\`;
+      const selector = `meta[property="${property}"][${MANAGED_ATTRIBUTE}="${MANAGED_VALUE}"]`;
       const existing = head.querySelector(selector) as HTMLMetaElement | null;
       const content = value?.trim();
 
@@ -94,10 +96,10 @@ const SEOHead: FC<SEOHeadProps> = ({
       rel: string,
       href?: string | null,
       extra: Record<string, string> = {},
-      id?: string
+      id?: string,
     ) => {
       const identifier = id ?? rel;
-      const selector = \`link[\${MANAGED_ATTRIBUTE}="\${MANAGED_VALUE}"][data-id="\${identifier}"]\`;
+      const selector = `link[${MANAGED_ATTRIBUTE}="${MANAGED_VALUE}"][data-id="${identifier}"]`;
       const existing = head.querySelector(selector) as HTMLLinkElement | null;
       const resolvedHref = href?.trim();
 
@@ -125,7 +127,7 @@ const SEOHead: FC<SEOHeadProps> = ({
     };
 
     const upsertJsonLd = (id: string, content: string) => {
-      const selector = \`script[type="application/ld+json"][data-id="\${id}"][\${MANAGED_ATTRIBUTE}="\${MANAGED_VALUE}"]\`;
+      const selector = `script[type="application/ld+json"][data-id="${id}"][${MANAGED_ATTRIBUTE}="${MANAGED_VALUE}"]`;
       let script = head.querySelector(selector) as HTMLScriptElement | null;
 
       if (!script) {
@@ -142,7 +144,7 @@ const SEOHead: FC<SEOHeadProps> = ({
     const resolvedTitle = title?.trim() ? title : DEFAULT_SITE_TITLE;
     const fullTitle = resolvedTitle.includes(DEFAULT_SITE_IDENTIFIER)
       ? resolvedTitle
-      : \`\${resolvedTitle} | \${DEFAULT_SITE_TITLE}\`;
+      : `${resolvedTitle} | ${DEFAULT_SITE_TITLE}`;
     const resolvedDescription = description?.trim() ? description : DEFAULT_DESCRIPTION;
     const resolvedCanonical = canonicalUrl?.trim() ? canonicalUrl : DEFAULT_CANONICAL_URL;
 
@@ -153,7 +155,7 @@ const SEOHead: FC<SEOHeadProps> = ({
     upsertMetaByName('author', DEFAULT_AUTHOR);
     upsertMetaByName('robots', 'index, follow');
     upsertMetaByName('viewport', 'width=device-width, initial-scale=1.0');
-    upsertMetaByName('theme-color', '#1f2937');
+    upsertMetaByName('theme-color', '#0f172a');
     upsertMetaByName('mobile-web-app-capable', 'yes');
     upsertMetaByName('apple-mobile-web-app-capable', 'yes');
     upsertMetaByName('apple-mobile-web-app-status-bar-style', 'default');
@@ -180,20 +182,20 @@ const SEOHead: FC<SEOHeadProps> = ({
 
     const organizationData: Record<string, unknown> = {
       '@context': 'https://schema.org',
-      '@type': 'Organization',
+      '@type': 'LegalService',
       name: DEFAULT_SITE_TITLE,
       url: resolvedCanonical,
       description: resolvedDescription,
+      telephone: DEFAULT_PHONE,
+      email: DEFAULT_EMAIL,
     };
 
-    organizationData.telephone = DEFAULT_PHONE;
-    organizationData.email = DEFAULT_EMAIL;
     const jsonLdContent = JSON.stringify(organizationData, null, 2);
     upsertJsonLd('organization', jsonLdContent);
 
     return () => {
       document.title = previousTitle;
-      managedNodes.forEach(node => node.remove());
+      managedNodes.forEach((node) => node.remove());
       managedNodes.clear();
     };
   }, [title, description, keywords, canonicalUrl, ogImage]);

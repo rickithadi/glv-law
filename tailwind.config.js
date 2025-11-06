@@ -1,65 +1,29 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/react-daisyui/dist/**/*.js",
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
       colors: {
-      "primary": "#3b82f6",
-      "secondary": "#64748b",
-      "accent": "#f59e0b"
-},
-      spacing: {
-      "spacing-1": "4px",
-      "spacing-2": "8px",
-      "spacing-3": "12px",
-      "spacing-4": "16px",
-      "spacing-5": "20px",
-      "spacing-6": "24px",
-      "spacing-7": "32px",
-      "spacing-8": "40px",
-      "spacing-9": "48px",
-      "spacing-10": "64px"
-},
+        brand: {
+          50: '#f8fafc',
+          100: '#eef2ff',
+          200: '#e0e7ff',
+          300: '#c7d2fe',
+          400: '#a5b4fc',
+          500: '#818cf8',
+          600: '#4f46e5',
+          700: '#4338ca',
+          800: '#3730a3',
+          900: '#312e81',
+        },
+      },
       fontFamily: {
-        body: ['var(--font-body)'],
-        heading: ['var(--font-heading)'],
-      }
+        sans: ['Inter', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+      },
     },
   },
-  plugins: [require('daisyui')],
-  daisyui: {
-    themes: [
-      [
-      "light",
-      "dark",
-      "cupcake",
-      "emerald"
-],
-      {
-        "custom": {
-        "primary": "#3b82f6",
-        "secondary": "#64748b",
-        "accent": "#f59e0b",
-        "neutral": "#1f2937",
-        "base-100": "#ffffff",
-        "base-200": "#f3f4f6",
-        "base-300": "#e5e7eb",
-        "info": "#06b6d4",
-        "success": "#10b981",
-        "warning": "#f59e0b",
-        "error": "#ef4444"
-}
-      }
-    ],
-    base: true,
-    styled: true,
-    utils: true,
-    prefix: "",
-    logs: false,
-    themeRoot: ":root",
-  },
-}
+  plugins: [],
+};

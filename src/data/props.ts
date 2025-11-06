@@ -5,7 +5,10 @@ export interface HeroProps {
   heading: string;
   subheading: string;
   fullText: string;
-  cta: Array<{ [key: string]: any }>;
+  cta: Array<{
+    html: string;
+    links: Array<{ text: string; href: string }>;
+  }>;
   backgroundImage: string;
 }
 
