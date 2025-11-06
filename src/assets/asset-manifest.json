@@ -1,0 +1,109 @@
+{
+  "downloadedAt": "2025-11-06T09:13:03.380Z",
+  "favicon": null,
+  "images": [
+    {
+      "originalUrl": "https://glvlaw.com/wp-content/uploads/2022/02/photo-of-gary.jpg",
+      "localPath": "/src/assets/images/photo-of-gary.jpg",
+      "alt": "Phot of Gray Voegele",
+      "width": null,
+      "height": null
+    },
+    {
+      "originalUrl": "https://glvlaw.com/wp-content/uploads/2022/02/photo-of-gary-200x300.jpg",
+      "localPath": "/src/assets/images/photo-of-gary-200x300.jpg",
+      "alt": "Phot of Gray Voegele",
+      "width": 200,
+      "height": null
+    },
+    {
+      "originalUrl": "https://glvlaw.com/wp-content/uploads/2022/02/Scale-White-Icon-1.png",
+      "localPath": "/src/assets/images/Scale-White-Icon-1.png",
+      "alt": "white scale symbol",
+      "width": null,
+      "height": null
+    },
+    {
+      "originalUrl": "https://glvlaw.com/wp-content/uploads/2022/02/Column-Symbol-1.png",
+      "localPath": "/src/assets/images/Column-Symbol-1.png",
+      "alt": "coulmn symbol",
+      "width": null,
+      "height": null
+    },
+    {
+      "originalUrl": "https://glvlaw.com/wp-content/uploads/2022/02/Rice-County-Courthouse-PIc.jpg",
+      "localPath": "/src/assets/images/Rice-County-Courthouse-PIc.jpg",
+      "alt": "rice county court house",
+      "width": null,
+      "height": null
+    },
+    {
+      "originalUrl": "https://glvlaw.com/wp-content/uploads/2022/02/Rice-County-Courthouse-PIc-300x130.jpg",
+      "localPath": "/src/assets/images/Rice-County-Courthouse-PIc-300x130.jpg",
+      "alt": "rice county court house",
+      "width": 300,
+      "height": null
+    },
+    {
+      "originalUrl": "https://glvlaw.com/wp-content/uploads/2022/02/Rice-County-Courthouse-PIc-1024x443.jpg",
+      "localPath": "/src/assets/images/Rice-County-Courthouse-PIc-1024x443.jpg",
+      "alt": "rice county court house",
+      "width": 1024,
+      "height": null
+    },
+    {
+      "originalUrl": "https://glvlaw.com/wp-content/uploads/2022/02/Rice-County-Courthouse-PIc-768x332.jpg",
+      "localPath": "/src/assets/images/Rice-County-Courthouse-PIc-768x332.jpg",
+      "alt": "rice county court house",
+      "width": 768,
+      "height": null
+    },
+    {
+      "originalUrl": "https://glvlaw.com/wp-content/uploads/2022/02/Best-In-MN-Plaque.jpg",
+      "localPath": "/src/assets/images/Best-In-MN-Plaque.jpg",
+      "alt": "2021 best attorneys in Minnesota award",
+      "width": null,
+      "height": null
+    },
+    {
+      "originalUrl": "https://glvlaw.com/wp-content/uploads/2022/02/Best-In-MN-Plaque-211x300.jpg",
+      "localPath": "/src/assets/images/Best-In-MN-Plaque-211x300.jpg",
+      "alt": "2021 best attorneys in Minnesota award",
+      "width": 211,
+      "height": null
+    },
+    {
+      "originalUrl": "https://glvlaw.com/wp-content/uploads/2022/02/Attorney-Symbol.png",
+      "localPath": "/src/assets/images/Attorney-Symbol.png",
+      "alt": "attorney symbol",
+      "width": null,
+      "height": null
+    },
+    {
+      "originalUrl": "https://glvlaw.com/wp-content/uploads/2022/02/Attorney-Symbol-291x300.png",
+      "localPath": "/src/assets/images/Attorney-Symbol-291x300.png",
+      "alt": "attorney symbol",
+      "width": 291,
+      "height": null
+    }
+  ],
+  "metaTags": {
+    "viewport": "width=device-width, initial-scale=1.0",
+    "robots": "index, follow",
+    "og:type": "website.business.law",
+    "og:locale": "en_US",
+    "twitter:card": "summary_large_image",
+    "phone": "507.334.2045",
+    "email": "gary@glvlaw.com"
+  },
+  "originalSeoData": {
+    "title": "",
+    "description": "",
+    "url": "https://glvlaw.com/",
+    "siteName": "glvlaw.com",
+    "keywords": "",
+    "author": "",
+    "canonicalUrl": "https://glvlaw.com/",
+    "timestamp": "2025-11-06T09:11:46.615Z"
+  }
+}
